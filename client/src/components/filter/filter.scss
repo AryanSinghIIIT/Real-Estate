@@ -1,0 +1,147 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1 {
+    font-weight: 400;
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .top,
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      outline: none;
+      background-color: #fff;
+      color: #333;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: #007bff;
+        box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+      }
+
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 30px; /* Space for dropdown icon */
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"%3E%3Cpath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"%3E%3C/path%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px 8px;
+    }
+
+    .price-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      .item {
+        flex: 1;
+      }
+    }
+  }
+
+  .bottom {
+    /* Keeping consistent spacing */
+    gap: 20px;
+
+    .item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #fece51;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ffb84d;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  /* Mobile responsive design */
+  @media (max-width: 768px) {
+    .top {
+      gap: 15px;
+    }
+
+    .bottom {
+      gap: 15px;
+    }
+
+    .item {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    .bottom button {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .item select,
+    .item input {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+}

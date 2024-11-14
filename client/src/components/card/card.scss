@@ -1,0 +1,152 @@
+@import "../../responsive.scss";
+
+.card {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #ddd;
+  border-radius: 16px;  // Round corners for a smoother look
+  overflow: hidden;  // To ensure the image and text are contained within the card
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);  // Softer shadow for depth
+  transition: all 0.3s ease;  // Add smooth transition for hover effects
+  cursor: pointer;
+  background-color: #fff;  // Ensure background color of the card
+
+  &:hover {
+    transform: translateY(-8px);  // Slightly larger hover effect for better interaction
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  // Stronger shadow on hover
+  }
+
+  .imageContainer {
+    flex: 2;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 16px 0 0 16px;  // Rounded corners for image
+
+    @include md {
+      display: none;  // Hide on mobile view
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px 0 0 16px;  // Ensure image corners match the card
+    }
+  }
+
+  .textContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 15px;  // Adjust spacing between elements
+    background-color: #fff;
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      transition: color 0.4s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #222;
+        transform: scale(1.05);  // Slight zoom effect on hover
+      }
+    }
+
+    .address {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #777;
+      font-weight: 300;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 10px;
+      background-color: rgba(254, 205, 81, 0.6);  // Price highlight with a soft background
+      color: #333;
+      width: max-content;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(254, 205, 81, 0.8);  // Darker on hover
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 15px;
+
+      .features {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+        color: #666;
+
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          background-color: #f8f8f8;
+          padding: 6px 12px;
+          border-radius: 8px;
+          color: #777;
+          font-weight: 400;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #e0e0e0;
+          }
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 15px;
+
+        .icon {
+          border: 1px solid #ddd;
+          padding: 8px 12px;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.3s ease, border-color 0.3s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+            border-color: #bbb;
+          }
+
+          svg {
+            width: 18px;
+            height: 18px;
+            color: #777;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include sm {
+    flex-direction: column;  // Stack elements on smaller screens
+    width: 100%;  // Full width on mobile
+    gap: 15px;  // Add spacing between card components on mobile
+  }
+}
